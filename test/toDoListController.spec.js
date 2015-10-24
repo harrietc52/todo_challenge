@@ -9,6 +9,7 @@ describe('ToDoListController', function () {
 
   it('initialises with empty todo term', function() {
     expect(ctrl.todoResult).toBeUndefined();
+    expect(ctrl.todoAdd).toBeUndefined();
   });
 
   describe('when adding a todo', function() {
@@ -19,6 +20,8 @@ describe('ToDoListController', function () {
     ];
 
     it('displays todos', function() {
+      ctrl.todoAdd = 'shop';
+      ctrl.addToDo();
       expect(ctrl.todoResult.todos).toEqual(todos)
     });
   });
