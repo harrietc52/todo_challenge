@@ -14,10 +14,10 @@
   <body ng-controller="ToDoListController as todoCtrl">
     <form class="form">
       <input type="text" ng-model="todoCtrl.todoAdd")>
-      <button class="btn">Add ToDoo</button>
+      <button class="btn" ng-click="todoCtrl.addToDo()">Add ToDoo</button>
     </form>
-    <ul>
-      <li ng-repeat="todo in todoCtrl.todoResult.todos" ng-show="todoCtrl.todoAdd">
+    <ul class="list-group">
+      <li ng-repeat="todo in todoCtrl.todoResult.todos">
         {{todo.title}}
       </li>
     </ul>

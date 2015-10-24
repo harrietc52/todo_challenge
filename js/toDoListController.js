@@ -11,4 +11,7 @@ todoList.controller('ToDoListController', [function() {
     ]
   };
 
+  self.addToDo = function() {
+    console.log('Todo is added')
+  };
 }]);
