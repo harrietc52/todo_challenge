@@ -12,5 +12,10 @@
   </head>
 
   <body ng-controller="ToDoListController as todoCtrl">
+    <ul>
+      <li ng-repeat="todo in todoCtrl.todoResult.todos">
+        {{todo.title}}
+      </li>
+    </ul>
   </body>
 </html>

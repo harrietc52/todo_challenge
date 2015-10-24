@@ -8,7 +8,19 @@ describe('ToDoListController', function () {
   }));
 
   it('initialises with empty todo term', function() {
-    expect(ctrl.todoTerm).toBeUndefined();
+    expect(ctrl.todoResult).toBeUndefined();
+  });
+
+  describe('when adding a todo', function() {
+    var todos = [
+      {
+        'title': 'Build a todo app'
+      }
+    ];
+
+    it('displays todos', function() {
+      expect(ctrl.todoResult.todos).toEqual(todos)
+    });
   });
 
 });
