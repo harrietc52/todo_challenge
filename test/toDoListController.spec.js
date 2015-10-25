@@ -33,4 +33,17 @@ describe('ToDoListController', function () {
     expect(ctrl.todos).toEqual([todo1, todo2]);
   });
 
+  it('todo is not done when created', function() {
+    ctrl.todoTitle = 'Call home';
+    ctrl.addTodo();
+    expect(ctrl.todoDone(0)).toBeUndefined;
+  });
+
+  it('todo knows when it is done', function() {
+    ctrl.todoTitle = 'Call home';
+    ctrl.addTodo();
+    ctrl.todos[0].done = true;
+    expect(ctrl.todoDone(0)).toBe('done');
+  });
+
 });

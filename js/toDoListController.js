@@ -13,6 +13,13 @@ todoList.controller('ToDoListController', [function() {
     self.todos.push({
       title: todoTitle
     })
+    console.log(self.todos)
+  }
+
+  self.todoDone = function(index) {
+    if (self.todos[index].done) {
+      return 'done'
+    }
   }
 
 }]);
