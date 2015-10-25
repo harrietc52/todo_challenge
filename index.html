@@ -15,7 +15,6 @@
       <input ng-model="todoCtrl.todoTitle" type="text">
       <button ng-click="todoCtrl.showTodos()" type="submit">Add ToDo</button>
     </form>
-
     <ul>
       <li ng-repeat="todo in todoCtrl.todos">
         {{todo.title}}

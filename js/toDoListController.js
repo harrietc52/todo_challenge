@@ -13,7 +13,6 @@ todoList.controller('ToDoListController', [function() {
     self.todos.push({
       title: todoTitle
     })
-      console.log([self.todos])
   }
 
 }]);
