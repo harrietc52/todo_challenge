@@ -31,5 +31,5 @@ todoList.controller('ToDoListController', [function() {
       return !todo.done
     })
   }
-  
+
 }]);

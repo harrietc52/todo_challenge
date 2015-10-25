@@ -11,17 +11,27 @@
     <script src="js/toDoListController.js"></script>
   </head>
   <body ng-controller="ToDoListController as todoCtrl">
+    <h3>ToDo List</h3>
     <form name="form">
-      <input  ng-model="todoCtrl.todoTitle" type="text" required />
+      <input  ng-model="todoCtrl.todoTitle" type="text" required/>
       <button ng-click="todoCtrl.showTodos(); todoCtrl.clearForm()" type="submit" ng-disabled="form.$invalid">Add ToDo</button>
     </form>
-    <button ng-click="todoCtrl.clearDone($index)" type="submit" id="delete{{$index}}">Delete Done</button>
-
-    <ul>
-      <li ng-repeat="todo in todoCtrl.todos" ng-class="todoCtrl.todoDone($index)">
+      <ul ng-repeat="todo in todoCtrl.todos" ng-class="todoCtrl.todoDone($index)">
         <input type="checkbox" ng-model="todoCtrl.todos[$index].done" id="checkbox{{$index}}">
         {{todo.title}}
-      </li>
     </ul>
+    <div>
+      <ng-pluralize
+        count="todoCtrl.todos.length"
+        when="{
+          '0': 'No items left',
+          '1': '1 itme left',
+          'other': '{} items left'
+        }"
+        >
+      </ng-pluralize>
+    </div>
+    <!-- <div>{{todoCtrl.todos.length}} todos left</div> -->
+    <button ng-click="todoCtrl.clearDone($index)" type="submit" id="delete{{$index}}">Delete Done</button>
   </body>
 </html>
