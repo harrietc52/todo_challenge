@@ -14,7 +14,7 @@
   </head>
   <body class="body">
     <div ng-controller="ToDoListController as todoCtrl">
-    <h3 class="topcontainer">ToDo List</h3>
+    <h3>ToDo List</h3>
     <div>
       <ng-pluralize
         count="todoCtrl.todos.length"
@@ -28,10 +28,10 @@
     </div>
     <form name="form">
       <input  ng-model="todoCtrl.todoTitle" type="text" required/>
-      <button ng-click="todoCtrl.showTodos(); todoCtrl.clearForm()" type="submit" ng-disabled="form.$invalid">Add ToDo</button>
+      <button class="btn" ng-click="todoCtrl.showTodos(); todoCtrl.clearForm()" type="submit" ng-disabled="form.$invalid">Add</button>
     </form>
     <button ng-click="todoCtrl.clearDone($index)" type="submit" id="delete{{$index}}">Delete Done</button>
-      <ul ng-repeat="todo in todoCtrl.todos" ng-class="todoCtrl.todoDone($index)" class="todolist">
+      <ul ng-repeat="todo in todoCtrl.todos" ng-class="todoCtrl.className($index)" class="todolist">
         <input type="checkbox" ng-model="todoCtrl.todos[$index].done" id="checkbox{{$index}}">
         <span class="done-{{todo.done}}">{{todo.title}}</span>
       </ul>
