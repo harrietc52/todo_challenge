@@ -46,4 +46,11 @@ describe('ToDoListController', function () {
     expect(ctrl.todoDone(0)).toBe('done');
   });
 
+  it('todo input box is cleared', function() {
+    ctrl.todoTitle = 'Call home';
+    ctrl.addTodo();
+    ctrl.clearForm();
+    expect(ctrl.todoTitle).toBeNull()
+  })
+
 });

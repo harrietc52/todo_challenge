@@ -11,9 +11,9 @@
     <script src="js/toDoListController.js"></script>
   </head>
   <body ng-controller="ToDoListController as todoCtrl">
-    <form>
+    <form name="form">
       <input ng-model="todoCtrl.todoTitle" type="text" required />
-      <button ng-click="todoCtrl.showTodos()" type="submit" ng-disabled="form.$invalid">Add ToDo</button>
+      <button ng-click="todoCtrl.showTodos(); todoCtrl.clearForm()" type="submit" ng-disabled="form.$invalid">Add ToDo</button>
     </form>
     <ul>
       <li ng-repeat="todo in todoCtrl.todos" ng-class="todoCtrl.todoDone($index)">

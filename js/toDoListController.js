@@ -22,4 +22,8 @@ todoList.controller('ToDoListController', [function() {
     }
   }
 
+  self.clearForm = function() {
+    self.todoTitle = null;
+  }
+
 }]);
