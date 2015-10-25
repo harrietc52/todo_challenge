@@ -11,14 +11,15 @@
     <script src="js/toDoListController.js"></script>
   </head>
 
-  <body ng-controller="ToDoListController as todoCtrl">
+  <body class ="container" ng-controller="ToDoListController as todoCtrl">
     <form class="form">
-      <input type="text" ng-model="todoCtrl.todoAdd")>
-      <button class="btn" ng-click="todoCtrl.addToDo()">Add ToDoo</button>
+      <input ng-model="todoCtrl.todoTitle" type="text">
+      <button ng-click="todoCtrl.addTodo()" type="submit" class="btn">Add ToDo</button>
     </form>
-    <ul class="list-group">
-      <li ng-repeat="todo in todoCtrl.todoResult.todos">
-        {{todo.title}}
+
+    <ul>
+      <li ng-repeat="todo in todoCtrl.todos"  class="todoCtrl">
+        testing
       </li>
     </ul>
   </body>

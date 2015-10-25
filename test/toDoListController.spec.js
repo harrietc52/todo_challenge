@@ -1,4 +1,5 @@
 describe('ToDoListController', function () {
+
   beforeEach(module('ToDoList'));
 
   var ctrl;
@@ -6,30 +7,18 @@ describe('ToDoListController', function () {
   beforeEach(inject(function($controller) {
     ctrl = $controller('ToDoListController');
   }));
+
+  var todo1 = {
+    title: 'Make todo app'
+  }
 
   it('initialises with empty todo term', function() {
-    // expect(ctrl.todoResult).toBeUndefined();
-    expect(ctrl.todoAdd).toBeUndefined();
+    expect(ctrl.todo).toBeUndefined();
   });
-});
-
-describe('when adding a todo', function() {
-  beforeEach(module('ToDoList'));
-
-  var ctrl;
-
-  beforeEach(inject(function($controller) {
-    ctrl = $controller('ToDoListController');
-  }));
-
-  var todos = [
-    {
-      'title': 'Build a todo app',
-      'title': 'Go to Joes'
-    }
-  ];
 
   it('displays todos', function() {
-    expect(ctrl.todoResult.todos).toEqual(todos);
+    ctrl.todoTitle = 'Make todo app'
+    expect(ctrl.showTodos()).toEqual([todo1]);
   });
+
 });
