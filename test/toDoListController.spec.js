@@ -53,7 +53,7 @@ describe('ToDoListController', function () {
     expect(ctrl.todoTitle).toBeNull()
   })
 
-  it('clear button removed done todos', function() {
+  it('can remove done todos', function() {
     ctrl.todoTitle = 'Make todo app';
     ctrl.showTodos();
     ctrl.todoTitle = 'Call home';

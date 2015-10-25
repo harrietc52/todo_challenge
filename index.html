@@ -10,10 +10,11 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="js/app.js"></script>
     <script src="js/toDoListController.js"></script>
+    <script src="test/e2e/toDoListFeature.js"></script>
   </head>
   <body class="body">
     <div ng-controller="ToDoListController as todoCtrl">
-    <h3>ToDo List</h3>
+    <h3 class="topcontainer">ToDo List</h3>
     <div>
       <ng-pluralize
         count="todoCtrl.todos.length"
