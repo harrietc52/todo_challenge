@@ -30,11 +30,17 @@
       <input  ng-model="todoCtrl.todoTitle" type="text" required/>
       <button class="btn" ng-click="todoCtrl.showTodos(); todoCtrl.clearForm()" type="submit" ng-disabled="form.$invalid">Add</button>
     </form>
-    <button class="deletebtn" ng-click="todoCtrl.clearDone($index)" type="submit" id="delete{{$index}}">Delete Done</button>
-      <ul ng-repeat="todo in todoCtrl.todos" ng-class="todoCtrl.className($index)" class="todolist">
-        <input type="checkbox" ng-model="todoCtrl.todos[$index].done" id="checkbox{{$index}}">
-        <span class="done-{{todo.done}}">{{todo.title}}</span>
-      </ul>
+
+    <button ng-click="todoCtrl.all()" click-off="todoCtrl.all()">All</button>
+    <button ng-click="todoCtrl.clearDone()" click-off="todoCtrl.all()">Active</button>
+    <button ng-click="todoCtrl.doneTodo()" click-off="todoCtrl.all()">Completed</button>
+    <button ng-click="todoCtrl.clearDone($index)" type="submit" id="delete{{$index}}">Remove Completed</button>
+
+    <ul ng-repeat="todo in todoCtrl.todos" ng-class="todoCtrl.className($index)" class="todolist">
+      <input type="checkbox" ng-model="todoCtrl.todos[$index].done" id="checkbox{{$index}}">
+      <span class="done-{{todo.done}}">{{todo.title}}</span>
+    </ul>
+
     </div>
   </body>
 </html>

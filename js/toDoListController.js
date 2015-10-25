@@ -13,7 +13,6 @@ todoList.controller('ToDoListController', [function() {
     self.todos.push({
       title: todoTitle
     })
-    console.log(self.todos)
   }
 
   self.todoDone = function(index) {
@@ -31,5 +30,16 @@ todoList.controller('ToDoListController', [function() {
       return !todo.done
     })
   }
+
+  self.doneTodo = function() {
+    self.todos = self.todos.filter(function(todo){
+      return todo.done
+    })
+  }
+
+  self.all = function() {
+    return self.todos
+  }
+
 
 }]);
