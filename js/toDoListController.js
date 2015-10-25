@@ -26,4 +26,10 @@ todoList.controller('ToDoListController', [function() {
     self.todoTitle = null;
   }
 
+  self.clearDone = function() {
+    self.todos = self.todos.filter(function(todo){
+      return !todo.done
+    })
+  }
+  
 }]);

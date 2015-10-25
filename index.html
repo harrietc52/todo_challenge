@@ -12,12 +12,14 @@
   </head>
   <body ng-controller="ToDoListController as todoCtrl">
     <form name="form">
-      <input ng-model="todoCtrl.todoTitle" type="text" required />
+      <input  ng-model="todoCtrl.todoTitle" type="text" required />
       <button ng-click="todoCtrl.showTodos(); todoCtrl.clearForm()" type="submit" ng-disabled="form.$invalid">Add ToDo</button>
     </form>
+    <button ng-click="todoCtrl.clearDone($index)" type="submit" id="delete{{$index}}">Delete Done</button>
+
     <ul>
       <li ng-repeat="todo in todoCtrl.todos" ng-class="todoCtrl.todoDone($index)">
-        <input type="checkbox" ng-model="todoCtrl.todos[$index].done">
+        <input type="checkbox" ng-model="todoCtrl.todos[$index].done" id="checkbox{{$index}}">
         {{todo.title}}
       </li>
     </ul>
